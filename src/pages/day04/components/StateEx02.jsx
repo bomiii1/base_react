@@ -1,10 +1,13 @@
 import { useState } from "react";
 
 export default function StateEx02() {
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
 
-  const handleMinus = () => {};
-  const handlePlus = () => {};
+  const handleMinus = () => setCount((prev) => (prev > 0 ? prev - 1 : 0));
+  const handlePlus = () => setCount((prev) => prev + 1);
+
+  const price = 12000;
+  const totalPrice = price * count;
   return (
     <div className="h-screen flex items-center justify-center bg-gray-200">
       <div className="bg-white p-6 rounded-lg shadow-2xl w-64 text-center space-y-4">
@@ -27,8 +30,11 @@ export default function StateEx02() {
           </button>
         </div>
         {/* 가격*/}
-        <div className="text-gray-700">단가 : 12,000원</div>
-        <div className="text-2xk\l font-bold text-green-500">총 15,000원</div>
+        <div className="text-gray-700">단가 : {price.toLocaleString()}원</div>
+        {/* toLocaleString() : 숫자 000,000 세자리마다 콤마찍어줌  */}
+        <div className="text-2xk\l font-bold text-green-500">
+          총 {totalPrice.toLocaleString()}원
+        </div>
       </div>
     </div>
   );
