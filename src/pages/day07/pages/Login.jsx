@@ -22,13 +22,13 @@ export default function Login() {
     <div className="flex justify-center items-center h-screen bg-gray-300">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-3/5 p-12 bg-white rounded-xl shadow flex flex-col"
+        className="w-3/5 p-12 bg-gray-700 rounded-xl shadow flex flex-col"
       >
-        <h1 className="font-bold text-3xl mb-[15px]">LOGIN</h1>
+        <h1 className="font-bold text-3xl mb-[15px] text-green-400 pl-1">LOGIN</h1>
         <input
           {...register("username", { required: "아이디는 필수 입니다." })}
           // required = 필수
-          className="w-full p-2 rounded-md mt-4 border border-slate-300"
+          className="w-full py-2 px-4 rounded-md mt-4 border bg-slate-300"
           type="text"
           placeholder="아이디를 입력하세요😊"
         />
@@ -47,19 +47,20 @@ export default function Login() {
               message: "영문과 숫자를 포함해야 됩니다",
             },
           })}
-          className="w-full p-2 rounded-md mt-4 border border-slate-300"
+          className="w-full py-2 px-4 rounded-md mt-4 border bg-slate-300"
           type="password"
           placeholder="비밀번호를 입력하세요😊"
         />
         <ErrorMessage message={errors?.password?.message} />
         <button
-          className={`active:scale-95 w-full rounded-md p-2 text-white font-bold mt-4 cursor-pointer transition ${isValid ? "bg-blue-400" : "bg-blue-200"}`}
+          className={`active:scale-95 w-full rounded-md p-2  font-bold mt-4 cursor-pointer transition ${isValid ? "bg-green-400" : "bg-green-200"}`}
         >
+          
           로그인
         </button>
         <div className="flex gap-2.5 justify-end mt-[20px] text-[14px]">
-          <p>계정이 없으신가요?</p>
-          <Link to={"/signup"} className="text-blue-500">
+          <p className="text-slate-200">계정이 없으신가요?</p>
+          <Link to={"/signup"} className="text-green-400">
             회원가입
           </Link>
         </div>
