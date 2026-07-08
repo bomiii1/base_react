@@ -1,0 +1,10 @@
+import Header from "../components/Header";
+
+export default function Main() {
+  return (
+    <div>
+      <Header />
+      <h1>Main</h1>
+    </div>
+  );
+}
