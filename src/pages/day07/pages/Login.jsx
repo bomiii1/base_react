@@ -28,7 +28,7 @@ export default function Login() {
         <input
           {...register("username", { required: "아이디는 필수 입니다." })}
           // required = 필수
-          className="w-full py-2 px-4 rounded-md mt-4 border bg-slate-300"
+          className="w-full py-2 px-4 rounded-md mt-4 bg-slate-300"
           type="text"
           placeholder="아이디를 입력하세요😊"
         />
